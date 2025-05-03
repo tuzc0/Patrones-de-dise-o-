@@ -16,32 +16,47 @@ class HamburguesaBuilder:
     def __init__(self):
         self.hamburguesa = Hamburguesa()
 
+    def _pausar(self, metodo):
+        print(f"Clase: {self.__class__.__name__} | Acción: {metodo}")
+        input("Presiona Enter para continuar...\n")
+
     def elegir_pan(self, tipo):
         self.hamburguesa.pan = tipo
+        self._pausar("elegir_pan")
         return self
 
     def elegir_carne(self, tipo):
         self.hamburguesa.carne = tipo
+        self._pausar("elegir_carne")
         return self
 
     def agregar_queso(self, tipo):
         self.hamburguesa.queso = tipo
+        self._pausar("agregar_queso")
         return self
 
     def agregar_vegetal(self, vegetal):
         self.hamburguesa.vegetales.append(vegetal)
+        self._pausar("agregar_vegetal")
         return self
 
     def agregar_salsa(self, salsa):
         self.hamburguesa.salsas.append(salsa)
+        self._pausar("agregar_salsa")
         return self
 
     def construir(self):
+        self._pausar("construir")
         return self.hamburguesa
 
 # Director (opcional)
 class Chef:
+    def _pausar(self, metodo):
+        print(f"Clase: {self.__class__.__name__} | Acción: {metodo}")
+        input("Presiona para continuar...\n")
+
     def preparar_cheeseburger_clasica(self, builder):
+        self._pausar("preparar_cheeseburger_clasica")
         return (builder.elegir_pan("pan con ajonjolí")
                       .elegir_carne("res")
                       .agregar_queso("cheddar")

@@ -57,9 +57,11 @@ class Biblioteca:
 
     def mostrar_todos_los_libros(self):
         for seccion in self.secciones:
+            nombre_seccion = seccion.__class__.__name__
             iterador = seccion.crear_iterador()
             for libro in iterador:
-                print(f"- {libro}")
+                print(f"Clase: {nombre_seccion} | Libro: {libro}")
+                input("Presiona Enter para continuar...\n")
 
 # Ejecución
 if __name__ == "__main__":
